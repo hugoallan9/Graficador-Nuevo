@@ -47,8 +47,16 @@ graficaLinea <- function(data, color1 = color, inicio = 0, ancho = 1.7)
  minimo <- min(ggplot_build(grafica)$data[[1]]$y)
  maximo <- max(ggplot_build(grafica)$data[[1]]$y)
  limite <- minimo - 0.3*(maximo - minimo)
- grafica <- grafica + scale_y_continuous(limits = c(limite,NA))+
-   theme(plot.margin = unit(c(2.5,3,0,-7), "mm"))
+if(ggplot_build(grafica)$data[[1]]$y[1] > 3)
+{
+  grafica <- grafica + scale_y_continuous(limits = c(limite,NA))+
+    theme(plot.margin = unit(c(2.5,3,0,-7), "mm"))
+}
+else
+{
+  grafica <- grafica + scale_y_continuous(limits = c(limite,NA))+
+    theme(plot.margin = unit(c(2.5,3,0,-4), "mm"))
+}
  return(grafica)
 }
 
