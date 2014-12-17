@@ -1,5 +1,5 @@
 source("funciones.R")
-g1<- graficaLinea(tablas$"1_01")
+g1<- graficaLineaTrim(tablas$"1_01")
 exportarLatex("1_01.tex",g1)
 
 g2 <- graficaCol(tablas$"1_02")

@@ -50,17 +50,19 @@ temaINE <- theme_gray(base_size = fontSize, base_family = "Open Sans Condensed L
 
 temaBarras <- temaINE
 temaBarras <- temaBarras + theme(
-  axis.line.y = element_line(colour = grisBase),
+  axis.line.y = element_line(colour = color),
   axis.line.x = element_line(colour = NA),
   axis.text.y = element_text(hjust = 1, vjust = 0.5)
   ) 
 
 temaColumnas <- temaINE
 temaColumnas <- temaBarras + theme(
-  axis.line.x = element_line(colour = grisBase),
+  axis.line.x = element_line(colour = color),
   axis.line.y = element_line(colour = NA),
   axis.text.y = element_text(colour = NA)
   )
+
+temaPie <- temaINE
 
 
 
@@ -79,17 +81,19 @@ options(tikzXelatexPackages = c("\\usepackage{tikz}\n",
 
 options(tikzUnicodeMetricPackages = c("\\usepackage[T1]{fontenc}\n","\\usetikzlibrary{calc}\n",
                                       "\\usepackage{fontspec,xunicode}\n", 
-                                      "\\setmainfont{Open Sans Condensed Light}"))
+                                      "\\setmainfont{Open Sans Condensed Light}\n"))
 
-options(tikzDocumentDeclaration= "\\documentclass[12pt]{book}")
+options(tikzDocumentDeclaration= "\\documentclass[10pt,twoside]{book}")
 
 
 #***********************ALGUNAS VARIABLES UTILES*******************#
 repu <- c("Total República, Total republica, Total república, Total Republica")
-ignorado <- c("Ignorado", "ignorado", "IGNORADO", "otros", "Otro", "Otros", "OTROS", "Ignorada", "ignorada")
+ignorado <- c("Ignorado", "ignorado", "IGNORADO", "Ignorada", "ignorada")
 pts2mm <- 0.352777778
-color <- rgb(219,174,109, maxColorValue = 255)
+color <- rgb(0,0,0, maxColorValue = 255)
 color2 <- rgb(0.603921568627451,0.6274509803921569,0.4862745098039216)
 izquierdo <- -5
 abajo <- -8
+usep <- 2.8
+izBar <- -17
 
