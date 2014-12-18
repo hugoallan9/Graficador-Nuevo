@@ -1,0 +1,652 @@
+
+\documentclass[10pt,twoside]{book}
+
+%\usepackage[utf8]{inputenc}  %Para compilar en PdfLaTeX
+
+%Recordatorio de relleno
+
+%macro del capítulo
+%\INEchapter{TÍTULO: SUBTÍTULO (para índice)}{TÍTULO:}{SUBTÍTULO}{Descripción}
+%Hoja
+
+%caja de media hoja
+%\cajita{Título}{Descripción}{Subtítulo}{Desagregación}{Gráfica}{Fuente}{\notita{Nota}}
+
+%caja de hoja completa
+%\cajota{Título}{Descripción}{Subtítulo}{Desagregación}{Gráfica}{Fuente}{\notita{Nota}}
+
+
+
+%Paquetes estándar
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{setspace} 
+\usepackage{xltxtra}
+\usepackage{enumitem}
+\usepackage{fixltx2e} %Fabiola
+
+%Tablas de Excel convertidas a LaTeX
+\usepackage{booktabs}
+\usepackage{multirow}
+\newcounter{Cuadro}[chapter]
+\renewcommand{\theCuadro}{\thechapter.\arabic{Cuadro}}
+
+
+%Columnas definibles en ancho
+\usepackage{array}
+\newcolumntype{x}[1]{%
+	>{\centering\arraybackslash}p{#1}}%
+
+\newcolumntype{g}[1]{%
+	>{\raggedleft\arraybackslash}p{#1}}%
+
+
+\usepackage[input-decimal-markers={.}, input-ignore={,}, group-separator={,}]{siunitx}
+
+
+%Para pruebas
+\usepackage{lipsum}
+\newcommand{\comop}{}
+\newcommand{\comcl}{}
+\newcommand{\guiop}{}
+\newcommand{\guicl}{}
+\newcommand{\apartado}[1]{\addtocounter{section}{1}
+	{\noindent\Bold\Large\color{color1!80!black}\thesection $\,-$ #1}\\[2mm]}
+
+
+%Para compilar en XeLaTeX con tildes
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+
+%Tipo de letra
+\usepackage{fontspec}
+\setmainfont[
+BoldFont = OpenSans-CondBold.ttf ,
+ItalicFont = texgyrepagella-italic.otf ,
+BoldItalicFont = OpenSans-CondLightItalic.ttf ]{OpenSans-CondLight.ttf}
+\newfontfamily\Bold{Open Sans Condensed Bold}
+
+\newfontfamily\Sans{Open Sans}
+\newfontfamily\Italic{Open Sans Condensed Light Italic}
+\newfontfamily\Logos{Latin Modern Roman}
+
+
+
+%Diseño global del documento
+\usepackage[paperwidth=8.5in, paperheight=6.5in, left=0.950in, right=0.8in, top=0.525in, bottom=0.675in]{geometry}
+%	\setlength{\headsep}{0pt}
+%	\setlength{\footskip}{46pt}
+\setlength{\parindent}{2em}		%sangría
+\setlength{\parskip}{2ex}		%separación entre párrafos  
+
+%Distancias
+\newlength{\cuadri} 
+\setlength{\cuadri}{0.125in}
+
+
+
+
+%Tabla de contenidos y vinculaciones
+\usepackage{tocloft}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+%Formato de  de contenidos
+\setlength{\cftbeforetoctitleskip}{0em}
+\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{empty}}} 
+
+\makeatletter
+\renewcommand*\l@subsection{\@dottedtocline{2}{5.2em}{3.2em}}
+\makeatother
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+\cftsetpnumwidth{2\cuadri}
+\cftsetrmarg{8\cuadri}
+\renewcommand{\cftsecnumwidth}{2.0\cuadri}
+\renewcommand{\cftchapnumwidth}{2\cuadri}
+\renewcommand{\cftsecindent}{2\cuadri}
+
+
+
+% Elementos geométricos de diseño del cuerpo (cajas de colores, etc.)
+\usepackage{colortbl}
+
+
+%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+%Cambios de márgenes y según paridad de hojas
+\usepackage[strict]{changepage}
+\strictpagecheck
+
+%Colores base del documento
+\definecolor{color1}{rgb}{0,0,0}
+\definecolor{color2}{rgb}{0.7843137254901961,0.7843137254901961,0.7843137254901961}
+
+
+%Para que las páginas en blanco no estén numeradas
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{
+	\clearpage
+	{\pagestyle{empty}\origdoublepage}}
+\let\cleardoublepage\clearemptydoublepage
+
+%Llamadas hacia notas
+\newcommand{\llamada}{*$\ $}
+\newcommand{\llamadaD}{**$\ $}
+%tablas
+\usepackage{pdflscape}
+\usepackage{rotating}
+\usepackage{bigstrut}
+\usepackage{longtable}
+\LTcapwidth=1.234\textwidth
+\setlength{\arrayrulewidth}{0.8pt}
+\arrayrulecolor{color1!80!black}
+
+%Columnas centradas definibles en ancho
+\newcolumntype{x}[1]{%
+	>{\centering\arraybackslash}p{#1}}%
+
+
+
+% Tcolorbox
+\usepackage[skins, breakable, hooks]{tcolorbox}
+
+
+\newtcolorbox{tocbox}{skin=enhancedmiddle, width=39\cuadri, nobeforeafter, boxrule=0pt, colframe=white, left=0\cuadri, enlarge left by = 4\cuadri, enlarge right by=2\cuadri, bottom=0pt, top=0pt, right=0\cuadri, left=0\cuadri, arc=0pt, colback= white, breakable,check odd page,toggle left and right}
+
+\newtcolorbox{fondo}{width=6.75in, height=5.3in, skin=enhancedmiddle, nobeforeafter, enlarge left by=-0mm, enlarge top by=-0mm, boxrule=0pt, colframe=white, left=-10pt, bottom=-1pt, top=-3pt, right=-10pt, arc=0pt, colback= white}
+
+\newtcolorbox{hoja-capitulo}{width=8.5in, height=6.5in,   skin=enhancedmiddle,  nobeforeafter,  watermark graphics=capitulo3.png, watermark opacity=1.0, watermark overzoom=1.0, enlarge left by=-7.65\cuadri, enlarge top by=-14.68\cuadri,  enlarge bottom by=-20\cuadri, boxrule=0pt, colframe=white, left=-3pt, bottom=-1pt, top=8\cuadri, right=-3pt, arc=0pt}
+
+\newtcolorbox{columnatipoA}{width=3.19in, height=5.28in, nobeforeafter, enlarge left by=0.15pt, enlarge top by=-0mm, boxrule=0pt, colframe=white, left=-3pt, bottom=-1pt, top=0.9pt, right=-3pt, arc=0pt, colback= white}
+
+\newtcolorbox{fondo-landscape}{width=39\cuadri, height=38\cuadri, nobeforeafter, enlarge left by=-3mm,
+	enlarge bottom by=-40mm, enlarge top by=-11mm, boxrule=0pt, colframe=white, left=0pt, bottom=0pt, top=0pt, right=0pt, arc=0pt, colback= white}
+
+\newtcolorbox{bloque-media}{width=40\cuadri, height=19\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=1.4\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{bloque-una}{width=40\cuadri, height=1\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=1.4\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{descripcion}{width=10.5\cuadri, height=15.9\cuadri, enlarge bottom by=0\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, nobeforeafter, boxrule=3pt, colback=color1!8!white, colframe=color1!8!white, left=5pt, right=5pt, top=4pt,bottom=4pt}
+
+\newtcolorbox{descripcion-una}{width=33.3\cuadri, height=6.2\cuadri, enlarge bottom by=1\cuadri, enlarge top by=-5pt, enlarge left by=-3pt, nobeforeafter, boxrule=3pt, colback=color1!8!white, colframe=color1!8!white, left=5pt, right=5pt, top=3pt,bottom=4pt}
+
+
+
+
+\newtcolorbox{descripcion-titulin}{width=33.3\cuadri, enlarge bottom by=1\cuadri, enlarge top by=-5pt, enlarge left by=-3pt, nobeforeafter, boxrule=3pt, colback=white, colframe=white, left=5pt, right=5pt, top=3pt,bottom=4pt}
+
+\newtcolorbox{titulin}{width=33.3\cuadri, height=3.2\cuadri, enlarge bottom by=1\cuadri, enlarge top by=0pt, enlarge left by=-3pt, nobeforeafter, boxrule=0pt, colback=white, colframe=white, left=5pt, right=5pt, top=6pt, bottom=4pt}
+
+
+\newcommand{\titulito}[2]{
+	\addtocontents{toc}{\protect\addvspace{0.4\baselineskip}\color{black}}
+	\addcontentsline{toc}{section}{\textbf{#1}}
+	\begin{bloque-media}
+		$\ $\\[1.4cm]
+		\begin{titulin}
+			\begin{center}
+				{\Huge\Bold\color{color1!90!black} #1}\\[1.5cm]
+			\end{center}
+		\end{titulin}
+		
+		\begin{tabular}{x{33.3\cuadri}}
+			\hline
+			$\ $\\
+			\begin{descripcion-titulin}
+				#2
+			\end{descripcion-titulin} \\
+			$\ $\\[-0.9cm] \hline 
+		\end{tabular}
+	\end{bloque-media} 
+}
+
+\newcommand{\titulitond}[1]{
+	\addtocontents{toc}{\protect\addvspace{0.4\baselineskip}\color{black}}
+	\addcontentsline{toc}{section}{\textbf{#1}}
+	\begin{bloque-media}
+		$\ $\\[1.4cm]
+		\begin{titulin}
+			\begin{center}
+				{\Huge\Bold\color{color1!90!black} $\ $}\\[1.5cm]
+			\end{center}
+		\end{titulin}
+		
+		\begin{tabular}{x{33.3\cuadri}}
+			\hline
+			$\ $\\
+			\begin{descripcion-titulin}
+				\begin{center}
+					{\Huge\Bold\color{color1!90!black}#1}
+				\end{center}
+			\end{descripcion-titulin} \\
+			$\ $\\[-0.9cm] \hline 
+		\end{tabular}
+	\end{bloque-media} 
+}
+
+
+
+\newtcolorbox{notita-impar}{width=5.9\cuadri, enlarge bottom by=0\cuadri, enlarge top by=1\cuadri, enlarge left by=0.1\cuadri, nobeforeafter, boxrule=0pt, colback=white, colframe=color2!40!white, left=3pt, right=1pt, top=2pt,bottom=2pt, leftrule=0.6pt, rightrule=0pt,toprule=0pt,bottomrule=0pt, arc=0pt}
+
+\newtcolorbox{notita-par}{width=5.9\cuadri, enlarge bottom by=0\cuadri, enlarge top by=1\cuadri, enlarge left by=-0.55\cuadri, nobeforeafter, boxrule=0pt, colback=white, colframe=color2!40!white, left=1pt, right=3pt, top=2pt,bottom=2pt, rightrule=0.6pt, leftrule=0pt,toprule=0pt,bottomrule=0pt, arc=0pt}
+
+\newtcolorbox{numero-subseccion}{width=2.6\cuadri, height=1.4\cuadri, enlarge top by=-3pt, enlarge left by=-2.8\cuadri, enlarge right by= 4.613\cuadri, nobeforeafter, boxrule=0pt, colback=white, colframe=white, left=0.1\cuadri, right=0.1\cuadri, bottom= 0.455\cuadri, top=0.145\cuadri, arc=0pt}
+
+\newtcolorbox{titulo-subseccion}{width=28.8\cuadri, enlarge top by=-3pt, enlarge left by=-0.2\cuadri, enlarge bottom by=0\cuadri, nobeforeafter, boxrule=0pt, colback=white, colframe=white, left=0.1\cuadri, right=0.1\cuadri, bottom= -0.4\cuadri, top=0\cuadri, arc=0pt}
+
+\newtcolorbox{titulo-subseccion-blanco}{width=28\cuadri, enlarge top by=-0pt, enlarge left by=0pt, enlarge bottom by=0pt, nobeforeafter, colback=white, colframe=white, left=0\cuadri, right=0.5\cuadri, bottom= -4pt, top=-2pt, arc=0pt, bottomrule=0pt, leftrule=0pt, toprule= 0mm, rightrule= 0mm}
+
+\newtcolorbox{titulo-subseccion-continuacion}{width=32\cuadri, enlarge top by=-3pt, enlarge left by=-0.2\cuadri, enlarge bottom by=0.4\cuadri, nobeforeafter, boxrule=0pt, colback=white, colframe=white, left=0.3\cuadri, right=0.1\cuadri, bottom= -0.4\cuadri, top=0\cuadri, arc=0pt}
+
+\newtcolorbox{titulo}{width=34\cuadri, height=3\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=0.2\cuadri, nobeforeafter, colback=white, colframe=white, left=0.5\cuadri, right=0.5\cuadri, top=32pt,bottom=-48pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{centrador}{width=34\cuadri, enlarge top by=-48pt, enlarge left by=-3pt, enlarge bottom by=0pt, nobeforeafter, colback=white, colframe=white, left=-3pt, right=-3pt, bottom= -3pt, top=-3pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{centrador-par}{width=34\cuadri, enlarge top by=-48pt, enlarge left by=66.7pt, enlarge bottom by=0pt, nobeforeafter, colback=white, colframe=white, left=-3pt, right=-3pt, bottom= -3pt, top=-3pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{subtitulo}{width=22\cuadri, height=3\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=0.1\cuadri, nobeforeafter, colframe=white, colback=white, left=0\cuadri, right=0\cuadri, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{subtitulo-una}{width=28\cuadri, height=3\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=0.1\cuadri, nobeforeafter, colframe=white, colback=white, left=0\cuadri, right=0\cuadri, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{grafica}{width=22.1\cuadri, height=12\cuadri, enlarge top by=-3pt, enlarge left by=-5pt, enlarge bottom by=0.1\cuadri, nobeforeafter, colframe=white, colback=white, left=-2pt, right=-2pt, bottom= -2pt, top=-4pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{grafica-una}{width=33.4\cuadri, height=24.9\cuadri, enlarge top by=-3pt, enlarge left by=-5pt, enlarge bottom by=0.1\cuadri, nobeforeafter, colframe=white, colback=white, left=-2pt, right=-2pt, bottom= -2pt, top=-4pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{fuente}{width=22\cuadri, height=1\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=0\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=2pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{fuente-una}{width=33.4\cuadri, height=1\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=0\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=2pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{columna-central}{width=22\cuadri, height=15.9\cuadri, enlarge top by=-3pt, enlarge left by=-8pt, enlarge bottom by=0\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{columna-central-una}{width=33.4\cuadri, height=28.9\cuadri, enlarge top by=-3pt, enlarge left by=-4pt, enlarge bottom by=0\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{vacio1}{width=6\cuadri, height=3\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=0.1\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{nota}{width=6\cuadri, height=12\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=0.1\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{nota-una}{width=6\cuadri, height=24.9\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=0.1\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{vacio2}{width=6\cuadri, height=1\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, enlarge bottom by=0\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{columna-marginal}{width=6\cuadri, height=15.9\cuadri, enlarge top by=-3pt, enlarge left by=-8pt, enlarge bottom by=0\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+\newtcolorbox{columna-marginal-una}{width=6\cuadri, height=28.9\cuadri, enlarge top by=-3pt, enlarge left by=-8pt, enlarge bottom by=0\cuadri, nobeforeafter, colframe=white, colback=white, left=0pt, right=0pt, bottom= 0pt, top=0pt, arc=0pt, boxrule=0pt}
+
+
+% Encabezado y pie de página
+\usepackage{fancyhdr}
+
+\newlength{\nombrecapitulo}
+
+%cajitas de encabezado y pie de página
+\newtcbox{pagina}{nobeforeafter, boxrule=0pt,width= 3\cuadri, height=2\cuadri,  colback=white, left=2pt, right=2pt,   top=-1pt, bottom=-2pt, arc=0pt, enlarge left by=-10pt, enlarge right by=-10pt, width=2\cuadri, colframe = white}
+
+\newtcbox{piecapituloderecho}{enhanced, nobeforeafter, width=1\cuadri, boxrule=0pt, colback=white, left=0pt, right=0pt, bottom= 0pt, arc=0pt, enlarge left by=-0.5\cuadri, enlarge right by=-0.5\cuadri, enlarge top by=-\nombrecapitulo, enlarge bottom by=1\cuadri}
+
+\newtcbox{piecapituloizquierdo}{enhanced, nobeforeafter, width=1\cuadri, boxrule=0pt, colback=white, left=0pt, right=-3pt, bottom= 0pt, arc=0pt, enlarge left by=-0.5\cuadri, enlarge right by=-0.5\cuadri, enlarge top by=-\nombrecapitulo, enlarge bottom by=1\cuadri}
+
+\newtcbox{margenderecho}{nobeforeafter, height=42\cuadri, width=1\cuadri, boxrule=0pt, colback=white,enlarge left by=4\cuadri, enlarge right by= -5\cuadri, enlarge top by= -50\cuadri, enlarge bottom by=4.2\cuadri, left=-3pt, bottom= 0pt, top=-3pt, arc=0pt}
+
+
+\newtcbox{margenizquierdo}{nobeforeafter, height=42\cuadri, width=1\cuadri, boxrule=0pt, enlarge left by=-5\cuadri, enlarge right by= 4\cuadri,colback=white, enlarge top by= -50\cuadri, enlarge bottom by=4.2\cuadri, right=-3pt, bottom= 0pt, top=-3pt, arc=0pt}
+
+\newtcolorbox{artepieizquierdo}{skin=enhancedmiddle,watermark graphics=pie.png, watermark opacity=1.00, watermark overzoom=0.95, nobeforeafter, height=1\cuadri, width=63\cuadri, boxrule=0pt, enlarge left by=2\cuadri, enlarge right by= -65\cuadri, enlarge top by= -2.3\cuadri, enlarge bottom by=2.4\cuadri, right=-3pt, bottom= 0pt, top=-3pt, arc=0pt, colback=white, colframe=white}
+
+
+\newtcolorbox{artepiederecho}{skin=enhancedmiddle,watermark graphics=pie.png, watermark opacity=1.00,watermark overzoom=0.95, nobeforeafter, height=1\cuadri, width=63\cuadri, boxrule=0pt, enlarge left by=-65\cuadri, enlarge right by= 2\cuadri, enlarge top by= -2.3\cuadri, enlarge bottom by=2.4\cuadri, right=-3pt, bottom= 0pt, top=-3pt, arc=0pt,colback=white, colframe=white}
+
+%definición de estilo estándar de página
+\fancypagestyle{estandar}{%
+	\fancyhf{}
+	\fancyfoot[RO]{\settowidth{\nombrecapitulo}{\chaptitle}\setlength{\arrayrulewidth}{0.7pt}\setlength{\tabcolsep}{3pt}\arrayrulecolor{white!60!black}
+		\margenderecho{
+			\begin{tabular}{x{0.2cm}}
+				$\ $\\[41.2\cuadri]
+				\piecapituloderecho{\rotatebox[origin=c]{270}{\color{white!60!black}\chaptitle$\vphantom{q}$}} \\[-1\cuadri] \hline \\[-0.6\cuadri]
+				\pagina{\textbf{\thepage }}  \\ \begin{artepiederecho}\end{artepiederecho}
+			\end{tabular}}
+		}
+		\fancyfoot[LE]{\settowidth{\nombrecapitulo}{Comercio Exterior I-2014}\setlength{\arrayrulewidth}{0.7pt}\setlength{\tabcolsep}{3pt}\arrayrulecolor{white!60!black}
+			\margenizquierdo{
+				\begin{tabular}{x{0.2cm}}
+					$\ $\\[41.2\cuadri]
+					\piecapituloizquierdo{\rotatebox{90}{\color{white!60!black}Comercio Exterior I-2014$\vphantom{q}$}} \\[-1\cuadri] \hline \\[-0.6\cuadri]
+					\pagina{\textbf{\thepage }}  \\ \begin{artepieizquierdo}\end{artepieizquierdo}
+				\end{tabular}}
+			}
+			\renewcommand{\headrulewidth}{0pt}
+			\renewcommand{\footrulewidth}{0pt}}
+		
+		\pagestyle{empty}
+		
+		
+		%Estilo de los pies de columna
+		\makeatletter
+		\renewcommand\footnoterule{%
+			\kern-3\p@
+			\color{color2}\hrule\@width2.5cm\@height0.5pt
+			\kern2.6\p@}
+		\makeatother
+		
+		%Formato de encabezados
+		\usepackage[explicit]{titlesec}
+		%\usepackage{sectsty}
+		
+		
+		\titleformat{\subsection}[runin]{}{}{0pt}{}[]
+		\titlespacing{\subsection}{0pt}{-20pt}{0pt}
+		
+		\titleformat{\section}[runin]{}{}{0pt}{}[]
+		\titlespacing{\section}{0pt}{-20pt}{0pt}
+		
+		\titleformat{\chapter}[runin]{}{}{0pt}{}[]
+		\titlespacing{\section}{0pt}{-20pt}{0pt}
+		
+		%Comandos recolectores de información del pie de página
+		\newcommand{\chaptitle}{}
+		\newcommand{\subsectitle}{}
+		\newcommand{\sectitle}{}
+		
+		%Cajitas de capítulo
+		\newtcolorbox{numero-capitulo}{enhanced, width=4.5\cuadri, height= 5\cuadri, enlarge left by=-12\cuadri, nobeforeafter, boxrule=0pt, colback=white,  colframe=white, interior style={opacity=0.5}, left=0\cuadri, right=0\cuadri, bottom= 0.2\cuadri, top=-0.7\cuadri, arc=0pt}	
+		
+		\newtcolorbox{titulo-capitulo}{enhanced,width=34\cuadri, height= 5\cuadri, enlarge top by=-5\cuadri, enlarge left by=36\cuadri, nobeforeafter, boxrule=0pt, colback=white,colframe=white, left=-33\cuadri, right=-4.5\cuadri, bottom= 0\cuadri, top=-0.8\cuadri, arc=0pt}
+		
+		\newtcolorbox{numero-capitulo-long}{width=6\cuadri, height= 5\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, nobeforeafter, boxrule=0pt, colback=color1!95!black, colframe=white, left=0\cuadri, right=0\cuadri, bottom= 0.2\cuadri, top=1.2\cuadri, arc=0pt}	
+		
+		\newtcolorbox{titulo-capitulo-long}{enhanced,width=34\cuadri, height= 5\cuadri,interior style={opacity=0}, enlarge top by=-3pt, enlarge left by=1.5cm, nobeforeafter, boxrule=0pt, interior style={left color=color1!10!white,
+				right color=white}, left=0\cuadri, right=-6\cuadri, bottom= 0\cuadri, top=0\cuadri, arc=0pt}
+		
+		\newtcolorbox{capitulo-descripcion}{width=34\cuadri, enlarge top by=5\cuadri, enlarge left by=-7\cuadri, nobeforeafter, enlarge right by = 7\cuadri, interior style={color= white, opacity=0.5}, frame style={color= white, opacity=0.5} left=1.5\cuadri, right=1.5\cuadri, bottom= 1\cuadri, top= 1\cuadri, arc=0pt, bottomrule=0pt, leftrule=0pt, toprule= 0pt, rightrule= 0pt}
+		
+		
+		%Cajitas de apéndice
+		\newtcolorbox{numero-capitulo-app}{width=4.5\cuadri, height= 5\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, nobeforeafter, boxrule=0pt, colback=color2!95!black, colframe=color2!95!black, left=0\cuadri, right=0\cuadri, bottom= 0.2\cuadri, top=1.2\cuadri, arc=0pt}	
+		
+		\newtcolorbox{titulo-capitulo-app}{enhanced,width=34\cuadri, height= 5\cuadri, enlarge top by=-3pt, enlarge left by=1.5cm, nobeforeafter, boxrule=0pt, interior style={left color=white,
+				right color=white}, left=0\cuadri, right=-4\cuadri, bottom= 0\cuadri, top=0\cuadri, arc=0pt}
+		
+		\newtcolorbox{capitulo-descripcion-app}{width=22\cuadri, enlarge top by=-3pt, enlarge left by=-3pt, nobeforeafter, enlarge right by = 6\cuadri, colback=white, colframe=color2!20!white, left=1.5\cuadri, right=2\cuadri, bottom= 1\cuadri, top= 1\cuadri, arc=0pt, bottomrule=0pt, leftrule=2pt, toprule= 0pt, rightrule= 0pt}
+		
+		
+		%macro de sección	
+		
+		\newcommand{\subsecnew}[1]{\renewcommand{\subsectitle}{#1} \subsection{#1} {\Bold\large \subsectitle\\[-0.35cm]}}
+		
+		\newcounter{secnumber}[chapter]
+		
+		\newcommand{\secnew}[1]{\stepcounter{secnumber}\renewcommand{\sectitle}{#1} \section{#1} { \raisebox{0pt}{\begin{titulo-subseccion-blanco} \Bold\large\sectitle\vphantom{p}\end{titulo-subseccion-blanco}}\\[-0.35cm]}}
+		
+		
+		
+		% Formato de números de sección, subsección, etc...
+		
+		\newcommand{\secnumbering}{{\large\Bold \thechapter.\thesecnumber}}
+		
+		
+		
+		%Macros de relleno de contenido
+		
+		\newcommand{\maco}[4]{
+			\begin{landscape}
+				$\ $
+				
+				\hojarotada{
+					\begin{center}
+						$\ $\\[#1]
+						
+						
+						\begin{minipage}{32\cuadri}
+							\noindent{\Bold\color{color1!80!black} Cuadro \theCuadro $\,-$   #2}\\ #3\\[-3mm]
+						\end{minipage}
+						
+						\includegraphics{#4}
+					\end{center}
+				}\stepcounter{Cuadro}
+			\end{landscape}}
+			
+			
+			\newcommand{\INEchapter}[4]{
+				\cleardoublepage\addtocontents{toc}{\protect\addvspace{0.6\baselineskip}\color{color1!80!black}}
+				
+				\chapter[\texorpdfstring{\color{color1!80!black}#1}{#1}]{#2}\renewcommand{\chaptitle}{#1}\thispagestyle{empty}\addtocontents{toc}{\protect\addvspace{0.2\baselineskip}{\color{color1!10!white}\hrule height 0.9pt} \addvspace{0.6\baselineskip} \color{black}} \stepcounter{secnumber} $\ $\\[-1cm]
+				\begin{hoja-capitulo}
+					{$\hspace{2.6in}$\fontsize{24mm}{1em}\selectfont \Bold \thechapter  $\quad$}
+					\begin{titulo-capitulo}
+						\quad 
+						\raisebox{2.1\cuadri}{\begin{tabular}{l}
+								\fontsize{8.5mm}{1em}\selectfont \Bold \color{black} #2\\[1mm] 
+								\fontsize{8.5mm}{1em}\selectfont \Bold \color{black} #3 \vphantom{Í} 
+							\end{tabular}}
+						\end{titulo-capitulo}
+						$\ $\\[1.5cm]
+						\begin{flushright}
+							\begin{capitulo-descripcion}
+								\large #4
+							\end{capitulo-descripcion}
+						\end{flushright}
+					\end{hoja-capitulo}
+					\cleardoublepage
+				}
+				
+				
+				\newcommand{\INEchapterlong}[4]{\cleardoublepage\addtocontents{toc}{\protect\addvspace{0.6\baselineskip}\color{color1!80!black}}\chapter[\texorpdfstring{\color{color1!80!black}#1}{#1}]{#2}\renewcommand{\chaptitle}{#1}\thispagestyle{empty}\addtocontents{toc}{\protect\addvspace{0.3\baselineskip}{\color{color1!10!white}\hrule height 0.9pt} \addvspace{0.6\baselineskip} \color{black}} \stepcounter{secnumber} $\ $\\[-1cm]
+					\begin{titulo-capitulo-long}
+						\begin{numero-capitulo-long}\centering
+							{\fontsize{24mm}{1em}\selectfont\color{white} \Bold \thechapter}
+						\end{numero-capitulo-long}\quad 
+						\raisebox{2.1\cuadri}{\begin{tabular}{l}
+								\fontsize{9.5mm}{1em}\selectfont \Bold \color{color1!95!black} #2\\ 
+								\fontsize{9.5mm}{1em}\selectfont \Bold \color{color1!95!black} #3 \vphantom{Í} 
+							\end{tabular}}
+						\end{titulo-capitulo-long}
+						$\ $\\[1.5cm]
+						\begin{flushright}
+							\begin{capitulo-descripcion}
+								\large #4
+							\end{capitulo-descripcion}
+						\end{flushright}
+						\cleardoublepage
+					}
+					
+					
+					\newcommand{\appchapter}[4]{\cleardoublepage\addtocontents{toc}{\protect\addvspace{-0.1\baselineskip}\color{color2!80!black}}\chapter[\texorpdfstring{\color{color2!80!black}#1}{#1}]{#2}\renewcommand{\chaptitle}{#1}\thispagestyle{empty} \stepcounter{secnumber}\stepcounter{Cuadro} $\ $\\[1cm]
+						\begin{titulo-capitulo-app}
+							\begin{numero-capitulo-app}\centering
+								{\fontsize{24mm}{1em}\selectfont\color{white} \Bold \thechapter}
+							\end{numero-capitulo-app}\quad 
+							\raisebox{2.1\cuadri}{\begin{tabular}{l}
+									\fontsize{8.5mm}{1em}\selectfont \Bold \color{color2!95!black} #2\\ 
+									\fontsize{8.5mm}{1em}\selectfont \Bold \color{color2!95!black} #3 \vphantom{Í} 
+								\end{tabular}}
+							\end{titulo-capitulo-app}
+							$\ $\\[1.5cm]
+							
+							\cleardoublepage
+						}
+						
+						
+						
+						\newcommand{\hoja}[1]{\noindent
+							\begin{fondo}
+								#1 
+							\end{fondo}\clearpage}
+						
+						
+						
+						\newcommand{\hojados}[2]{\noindent
+							\begin{fondo}
+								\begin{tabular}{>{\centering\arraybackslash}p{3.19in}>{\centering\arraybackslash}p{0.01in}>{\centering\arraybackslash}p{3.19in}}
+									
+									\begin{columnatipoA}
+										#1
+									\end{columnatipoA}  & & 
+									\begin{columnatipoA}
+										#2
+									\end{columnatipoA}
+									\\ 
+									
+								\end{tabular} 
+								
+								
+							\end{fondo}\clearpage}
+						
+						
+						
+						
+						\newcommand{\columna}[8]{
+							$\hspace{-2.1mm}$\begin{tabular}{b{0.17in}p{2.85in}}
+								\color{white}\section{#1}&\\[-5.1mm] {\color{color1} \textbf{\thesection}} & \textbf{#1.}\\[-1mm]
+							\end{tabular}\\[2.5mm]
+							
+							
+							\small $\quad$#2  
+							
+							\vspace{3mm}
+							{\color{color2}
+								\hrule }
+							\vspace{-1mm}
+							
+							\begin{center}
+								{\footnotesize{\Bold#4}} \\[-1mm]
+								{\scriptsize\texttwelveudash$\,\,$#5$\,\,$\texttwelveudash}
+								#6\\[0mm]
+							\end{center}
+							$\ $\\[-6mm]
+							{\scriptsize Fuente: #7}\\[-2mm]
+							
+							{\color{color2}
+								\hrule }
+							\vspace{3mm}
+							
+							#3 
+							
+							#8
+						}
+						
+						
+						
+						
+						
+						\newcommand{\hojarotada}[1]{\noindent\begin{fondo-landscape} #1 \end{fondo-landscape}\clearpage}
+						
+						
+						
+						\newcommand{\notita}[1]{\footnotetext{\color{color2}$\hspace{-2.3mm}$\scriptsize#1\\[-1.5mm]}
+							
+							
+						}
+						
+						\newcommand{\notitasin}[1]{\color{color2}$\hspace{2.6mm}$\scriptsize#1\\[-1.5mm]
+							
+							
+						}
+						
+						
+						
+						\newcommand{\cajita}[7]{\checkoddpage\ifoddpage
+							\begin{bloque-media}
+								\begin{titulo}
+									\begin{centrador}
+										\begin{tabular}{p{2.5\cuadri}p{28.8\cuadri}}
+											& \\[-3mm]	
+											& {\begin{titulo-subseccion}\begin{numero-subseccion}\secnumbering \end{numero-subseccion}  \phantomsection{\secnew{#1}}  \end{titulo-subseccion}}  \\[-5mm]
+											&  \\[-1.3pt]
+										\end{tabular}
+									\end{centrador}
+								\end{titulo}
+								
+								\begin{tabular}{p{11\cuadri}p{21\cuadri}p{5\cuadri}}
+									\begin{descripcion}
+										#2
+									\end{descripcion} 
+									& 
+									\begin{columna-central}
+										\begin{subtitulo}
+											\centering\footnotesize{\Bold #3} \\
+											\texttwelveudash$\,\,$#4$\,\,$\texttwelveudash
+										\end{subtitulo}
+										
+										\begin{grafica}\centering
+											#5
+										\end{grafica}
+										
+										\begin{fuente}
+											\footnotesize #6 
+										\end{fuente}
+									\end{columna-central}
+									& 
+									\begin{columna-marginal}
+										\begin{vacio1}
+											
+										\end{vacio1}
+										
+										\begin{nota}
+											#7
+										\end{nota}
+										
+										\begin{vacio2}
+											
+										\end{vacio2}
+									\end{columna-marginal}
+									\\
+								\end{tabular}
+							\end{bloque-media}
+							\else
+							\begin{bloque-media}
+								\begin{titulo}
+									\begin{centrador-par}
+										\begin{tabular}{p{2.5\cuadri}p{28.8\cuadri}}
+											& \\[-3mm]	
+											& {\begin{titulo-subseccion}\begin{numero-subseccion}\centering\secnumbering\end{numero-subseccion}  \phantomsection{\secnew{#1}}  \end{titulo-subseccion}}  \\[-5mm]
+											&  \\[-1.3pt]
+										\end{tabular}
+									\end{centrador-par}
+								\end{titulo}
+								
+								\begin{tabular}{p{5\cuadri}p{21.36\cuadri}p{11\cuadri}}
+									\begin{columna-marginal}
+										\begin{vacio1}
+											
+										\end{vacio1}
+										
+										\begin{nota}
+											#7
+										\end{nota}
+										
+										\begin{vacio2}
+											
+										\end{vacio2}
+									\end{columna-marginal}		
+									& 
+									\begin{columna-central}
+										\begin{subtitulo}
+											\centering\footnotesize{\Bold #3} \\
+											\texttwelveudash$\,\,$#4$\,\,$\texttwelveudash
+										\end{subtitulo}
+										
+										\begin{grafica}\centering
+											#5
+										\end{grafica}
+										
+										\begin{fuente}
+											\footnotesize #6 
+										\end{fuente}
+									\end{columna-central}
+									& 
+									\begin{descripcion}
+										#2
+									\end{descripcion} 
+									\\
+								\end{tabular}
+							\end{bloque-media}
+							\fi
+						}
+						
+						
+

@@ -1,0 +1,63 @@
+\select@language {spanish}
+\thispagestyle {empty}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {1}\color {color1!80!black}Nacimientos}{3}{chapter.1}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {1.1}Nacimientos}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Nacimientos por departamento}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Nacimientos por edad de la madre}{6}{section.1.3}
+\contentsline {section}{\numberline {1.4}Nacimientos de madres menores de 20 años}{6}{section.1.4}
+\contentsline {section}{\numberline {1.5}Nacimientos por pueblo de pertenencia de la madre}{7}{section.1.5}
+\contentsline {section}{\numberline {1.6}Nacimientos según estado civil de la madre}{7}{section.1.6}
+\contentsline {section}{\numberline {1.7}Nacimientos según sexo del recién nacido}{8}{section.1.7}
+\contentsline {section}{\numberline {1.8}Nacimientos según peso del recién nacido}{8}{section.1.8}
+\contentsline {section}{\numberline {1.9}Nacimientos con bajo peso al nacer}{9}{section.1.9}
+\contentsline {section}{\numberline {1.10}Nacimientos por asistencia recibida durante el parto}{9}{section.1.10}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {2}\color {color1!80!black}Defunciones}{11}{chapter.2}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {2.1}Defunciones}{13}{section.2.1}
+\contentsline {section}{\numberline {2.2}Defunciones por departamento}{13}{section.2.2}
+\contentsline {section}{\numberline {2.3}Defunciones por día de la semana}{14}{section.2.3}
+\contentsline {section}{\numberline {2.4}Mortalidad infantil}{14}{section.2.4}
+\contentsline {section}{\numberline {2.5}Defunciones en menores de cinco años}{15}{section.2.5}
+\contentsline {section}{\numberline {2.6}Defunciones según asistencia recibida}{15}{section.2.6}
+\contentsline {section}{\numberline {2.7}Defunciones por lugar de ocurrencia}{16}{section.2.7}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {3}\color {color1!80!black}Defunciones fetales}{17}{chapter.3}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {3.1}Defunciones fetales}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Defunciones fetales por departamento}{19}{section.3.2}
+\contentsline {section}{\numberline {3.3}Defunciones fetales por semanas de gestación}{20}{section.3.3}
+\contentsline {section}{\numberline {3.4}Defunciones fetales por grupo de edad de la madre}{20}{section.3.4}
+\contentsline {section}{\numberline {3.5}Defunciones fetales por pueblo de pertenencia de la madre}{21}{section.3.5}
+\contentsline {section}{\numberline {3.6} Defunciones fetales por tipo de asistencia recibida}{21}{section.3.6}
+\contentsline {section}{\numberline {3.7}Defunciones fetales por sitio de ocurrencia}{22}{section.3.7}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {4}\color {color1!80!black}Matrimonios}{23}{chapter.4}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {4.1}Matrimonios}{25}{section.4.1}
+\contentsline {section}{\numberline {4.2}Matrimonios por departamento}{25}{section.4.2}
+\contentsline {section}{\numberline {4.3}Matrimonios por día de ocurrencia}{26}{section.4.3}
+\contentsline {section}{\numberline {4.4}Matrimonios por clase de unión}{26}{section.4.4}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {5}\color {color1!80!black}Divorcios}{27}{chapter.5}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {5.1}Divorcios}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}Divorcios por departamento de ocurrencia}{29}{section.5.2}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {6}\color {color1!80!black}CUADROS ESTADÍSTICOS}{31}{chapter.6}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {6.1}Nacimientos por trimestre de ocurrencia, según departamento de residencia de la madre}{33}{section.6.1}
+\contentsline {section}{\numberline {6.2}Defunciones por trimestre de ocurrencia, según departamento de residencia de la persona fallecida}{33}{section.6.2}
+\contentsline {section}{\numberline {6.3}Defunciones fetales por trimestre de ocurrencia, según departamento de residencia de la madre}{34}{section.6.3}
+\contentsline {section}{\numberline {6.4}Matrimonios por trimestre, según departamento de ocurrencia}{35}{section.6.4}
+\contentsline {section}{\numberline {6.5}Divorcios por trimestre, según departamento de ocurrencia}{37}{section.6.5}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {7}\color {color1!80!black}TABLAS DE VARIACIONES}{39}{chapter.7}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {7.1}Nacimientos}{41}{section.7.1}
+\contentsline {section}{\numberline {7.2}Defunciones}{41}{section.7.2}
+\contentsline {section}{\numberline {7.3}Defunciones fetales}{42}{section.7.3}
+\contentsline {section}{\numberline {7.4}Matrimonios}{42}{section.7.4}
+\contentsline {section}{\numberline {7.5}Divorcios}{43}{section.7.5}

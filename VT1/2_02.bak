@@ -1,0 +1,300 @@
+% Created by tikzDevice version 0.7.0 on 2014-12-12 12:44:14
+% !TEX encoding = UTF-8 Unicode
+\definecolor[named]{fillColor}{rgb}{1.00,1.00,1.00}
+\path[use as bounding box,fill=fillColor,fill opacity=0.00] (0,0) rectangle (230.54,138.04);
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (230.54,138.04);
+\definecolor[named]{drawColor}{rgb}{1.00,1.00,1.00}
+
+\path[draw=drawColor,line width= 0.6pt,line join=round,line cap=round] (  0.00,  0.00) rectangle (230.54,138.04);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (230.54,138.04);
+
+\path[] (  7.00, 65.36) rectangle (230.54,116.41);
+
+\path[] ( 13.04, 65.36) --
+	( 13.04,116.41);
+
+\path[] ( 23.11, 65.36) --
+	( 23.11,116.41);
+
+\path[] ( 33.18, 65.36) --
+	( 33.18,116.41);
+
+\path[] ( 43.25, 65.36) --
+	( 43.25,116.41);
+
+\path[] ( 53.32, 65.36) --
+	( 53.32,116.41);
+
+\path[] ( 63.39, 65.36) --
+	( 63.39,116.41);
+
+\path[] ( 73.46, 65.36) --
+	( 73.46,116.41);
+
+\path[] ( 83.53, 65.36) --
+	( 83.53,116.41);
+
+\path[] ( 93.60, 65.36) --
+	( 93.60,116.41);
+
+\path[] (103.67, 65.36) --
+	(103.67,116.41);
+
+\path[] (113.74, 65.36) --
+	(113.74,116.41);
+
+\path[] (123.81, 65.36) --
+	(123.81,116.41);
+
+\path[] (133.88, 65.36) --
+	(133.88,116.41);
+
+\path[] (143.94, 65.36) --
+	(143.94,116.41);
+
+\path[] (154.01, 65.36) --
+	(154.01,116.41);
+
+\path[] (164.08, 65.36) --
+	(164.08,116.41);
+
+\path[] (174.15, 65.36) --
+	(174.15,116.41);
+
+\path[] (184.22, 65.36) --
+	(184.22,116.41);
+
+\path[] (194.29, 65.36) --
+	(194.29,116.41);
+
+\path[] (204.36, 65.36) --
+	(204.36,116.41);
+
+\path[] (214.43, 65.36) --
+	(214.43,116.41);
+
+\path[] (224.50, 65.36) --
+	(224.50,116.41);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] ( 10.02, 65.36) rectangle ( 16.06,116.41);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] ( 20.09, 65.36) rectangle ( 26.13, 78.07);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] ( 30.16, 65.36) rectangle ( 36.20, 77.50);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] ( 40.23, 65.36) rectangle ( 46.27, 77.10);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] ( 50.30, 65.36) rectangle ( 56.34, 76.71);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] ( 60.37, 65.36) rectangle ( 66.41, 76.46);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] ( 70.44, 65.36) rectangle ( 76.48, 75.27);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] ( 80.51, 65.36) rectangle ( 86.55, 73.23);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] ( 90.58, 65.36) rectangle ( 96.62, 73.15);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (100.65, 65.36) rectangle (106.69, 72.71);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (110.72, 65.36) rectangle (116.76, 71.25);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (120.79, 65.36) rectangle (126.83, 71.12);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (130.85, 65.36) rectangle (136.90, 70.93);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (140.92, 65.36) rectangle (146.97, 70.87);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (150.99, 65.36) rectangle (157.03, 70.39);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (161.06, 65.36) rectangle (167.10, 69.95);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (171.13, 65.36) rectangle (177.17, 69.94);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (181.20, 65.36) rectangle (187.24, 69.73);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (191.27, 65.36) rectangle (197.31, 69.70);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (201.34, 65.36) rectangle (207.38, 69.07);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (211.41, 65.36) rectangle (217.45, 68.80);
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (221.48, 65.36) rectangle (227.52, 68.45);
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at ( 15.97,118.96) {4,313.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at ( 26.04, 80.61) {1,074.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at ( 36.11, 80.05) {1,026.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at ( 46.18, 79.00) {992.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at ( 56.25, 78.61) {959.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at ( 66.32, 78.36) {938.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at ( 76.39, 77.16) {837.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at ( 86.46, 75.13) {665.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at ( 96.53, 75.04) {658.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (106.60, 74.61) {621.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (116.66, 73.15) {498.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (126.73, 73.02) {487.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (136.80, 72.83) {471.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (146.87, 72.77) {466.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (156.94, 72.29) {425.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (167.01, 71.85) {388.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (177.08, 71.84) {387.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (187.15, 71.62) {369.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (197.22, 71.60) {367.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (207.29, 70.97) {314.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (217.36, 70.70) {291.0};
+
+\node[text=drawColor,rotate= 90.00,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  0.71] at (227.43, 70.34) {261.0};
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (230.54,138.04);
+
+\path[] (  7.00, 65.36) --
+	(  7.00,116.41);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (230.54,138.04);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\path[draw=drawColor,line width= 0.6pt,line join=round] (  7.00, 65.36) --
+	(230.54, 65.36);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (230.54,138.04);
+
+\path[] ( 13.04, 61.09) --
+	( 13.04, 65.36);
+
+\path[] ( 23.11, 61.09) --
+	( 23.11, 65.36);
+
+\path[] ( 33.18, 61.09) --
+	( 33.18, 65.36);
+
+\path[] ( 43.25, 61.09) --
+	( 43.25, 65.36);
+
+\path[] ( 53.32, 61.09) --
+	( 53.32, 65.36);
+
+\path[] ( 63.39, 61.09) --
+	( 63.39, 65.36);
+
+\path[] ( 73.46, 61.09) --
+	( 73.46, 65.36);
+
+\path[] ( 83.53, 61.09) --
+	( 83.53, 65.36);
+
+\path[] ( 93.60, 61.09) --
+	( 93.60, 65.36);
+
+\path[] (103.67, 61.09) --
+	(103.67, 65.36);
+
+\path[] (113.74, 61.09) --
+	(113.74, 65.36);
+
+\path[] (123.81, 61.09) --
+	(123.81, 65.36);
+
+\path[] (133.88, 61.09) --
+	(133.88, 65.36);
+
+\path[] (143.94, 61.09) --
+	(143.94, 65.36);
+
+\path[] (154.01, 61.09) --
+	(154.01, 65.36);
+
+\path[] (164.08, 61.09) --
+	(164.08, 65.36);
+
+\path[] (174.15, 61.09) --
+	(174.15, 65.36);
+
+\path[] (184.22, 61.09) --
+	(184.22, 65.36);
+
+\path[] (194.29, 61.09) --
+	(194.29, 65.36);
+
+\path[] (204.36, 61.09) --
+	(204.36, 65.36);
+
+\path[] (214.43, 61.09) --
+	(214.43, 65.36);
+
+\path[] (224.50, 61.09) --
+	(224.50, 65.36);
+\end{scope}
+\begin{scope}
+\path[clip] (  0.00,  0.00) rectangle (230.54,138.04);
+\definecolor[named]{drawColor}{rgb}{0.00,0.00,0.00}
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at ( 16.49, 58.24) {Guatemala};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at ( 26.56, 58.24) {Alta Verapaz};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at ( 36.62, 58.24) {San Marcos};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at ( 46.69, 58.24) {Huehuetenango};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at ( 56.76, 58.24) {Quetzaltenango};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at ( 66.83, 58.24) {Escuintla};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at ( 76.90, 58.24) {Quiché};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at ( 86.97, 58.24) {Jutiapa};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at ( 97.04, 58.24) {Chimaltenango};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (107.11, 58.24) {Suchitepéquez};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (117.18, 58.24) {Chiquimula};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (127.25, 58.24) {Santa Rosa};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (137.32, 58.24) {Totonicapán};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (147.39, 58.24) {Izabal};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (157.46, 58.24) {Petén};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (167.53, 58.24) {Retalhuleu};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (177.60, 58.24) {Sololá};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (187.67, 58.24) {Sacatepéquez};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (197.74, 58.24) {Jalapa};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (207.80, 58.24) {Zacapa};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (217.87, 58.24) {Baja Verapaz};
+
+\node[text=drawColor,rotate= 90.00,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.83] at (227.94, 58.24) {El Progreso};
+\end{scope}

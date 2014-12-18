@@ -1,0 +1,35 @@
+\select@language {spanish}
+\thispagestyle {empty}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {1}\color {color1!80!black}Morbilidad ambulatoria}{3}{chapter.1}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {1.1}Consulta externa: serie histórica}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Consulta externa por departamento}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Consulta externa por mes}{6}{section.1.3}
+\contentsline {section}{\numberline {1.4}Consulta externa por grupos de edad}{6}{section.1.4}
+\contentsline {section}{\numberline {1.5}Consulta externa en pacientes menores de cinco años}{7}{section.1.5}
+\contentsline {section}{\numberline {1.6}Consulta externa por sexo del paciente}{7}{section.1.6}
+\contentsline {section}{\numberline {1.7}Consulta externa por grupo étnico del paciente}{8}{section.1.7}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {2}\color {color1!80!black}Morbilidad hospitalaria}{9}{chapter.2}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {2.1}Consulta interna}{11}{section.2.1}
+\contentsline {section}{\numberline {2.2}Consulta interna por departamento}{11}{section.2.2}
+\contentsline {section}{\numberline {2.3}Consulta interna por mes}{12}{section.2.3}
+\contentsline {section}{\numberline {2.4}Consulta interna por grupos de edad}{12}{section.2.4}
+\contentsline {section}{\numberline {2.5}Consulta interna en pacientes menores de cinco años}{13}{section.2.5}
+\contentsline {section}{\numberline {2.6}Consulta interna por sexo del paciente}{13}{section.2.6}
+\contentsline {section}{\numberline {2.7}Consulta interna por grupo étnico del paciente}{14}{section.2.7}
+\contentsline {section}{\numberline {2.8}Consulta interna por tratamiento}{14}{section.2.8}
+\contentsline {section}{\numberline {2.9}Consulta interna por promedio de días de estancia del paciente}{15}{section.2.9}
+\contentsline {section}{\numberline {2.10}Consulta interna por condición de egreso del paciente}{15}{section.2.10}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {3}\color {color1!80!black}CONSULTAS SEGÚN DEPARTAMENTO}{17}{chapter.3}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {3.1}Consulta externa por trimestre de ocurrencia, según departamento de residencia del paciente}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Consulta interna por trimestre de ocurrencia, según departamento de residencia del paciente}{19}{section.3.2}
+\addvspace {0.6\baselineskip }\color {color1!80!black}
+\contentsline {chapter}{\numberline {4}\color {color1!80!black}TABLAS DE VARIACIONES}{21}{chapter.4}
+\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
+\contentsline {section}{\numberline {4.1}Consulta externa}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}Consulta interna}{23}{section.4.2}
