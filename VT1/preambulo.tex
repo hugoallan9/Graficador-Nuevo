@@ -26,7 +26,12 @@
 \usepackage{setspace} 
 \usepackage{xltxtra}
 \usepackage{enumitem}
-\usepackage{fixltx2e} %Fabiola
+\usepackage{fixltx2e}
+
+
+%título
+\newcommand{\titulodoc}{Nombre del documento}
+
 
 %Tablas de Excel convertidas a LaTeX
 \usepackage{booktabs}
@@ -124,7 +129,7 @@ BoldItalicFont = OpenSans-CondLightItalic.ttf ]{OpenSans-CondLight.ttf}
 
 %Colores base del documento
 \definecolor{color1}{rgb}{0,0,0}
-\definecolor{color2}{rgb}{0.7843137254901961,0.7843137254901961,0.7843137254901961}
+\definecolor{color2}{gray}{0.45}
 
 
 %Para que las páginas en blanco no estén numeradas
@@ -288,12 +293,14 @@ BoldItalicFont = OpenSans-CondLightItalic.ttf ]{OpenSans-CondLight.ttf}
 
 \newtcbox{piecapituloderecho}{enhanced, nobeforeafter, width=1\cuadri, boxrule=0pt, colback=white, left=0pt, right=0pt, bottom= 0pt, arc=0pt, enlarge left by=-0.5\cuadri, enlarge right by=-0.5\cuadri, enlarge top by=-\nombrecapitulo, enlarge bottom by=1\cuadri}
 
+\newtcbox{encabezado}{enhanced, nobeforeafter, height=1\cuadri, boxrule=0pt, colback=white, left=0pt, right=0pt, bottom= -0pt, arc=0pt, enlarge left by=-3pt, enlarge right by=0\cuadri, enlarge top by=0\cuadri, enlarge bottom by=-0\cuadri}
+
 \newtcbox{piecapituloizquierdo}{enhanced, nobeforeafter, width=1\cuadri, boxrule=0pt, colback=white, left=0pt, right=-3pt, bottom= 0pt, arc=0pt, enlarge left by=-0.5\cuadri, enlarge right by=-0.5\cuadri, enlarge top by=-\nombrecapitulo, enlarge bottom by=1\cuadri}
 
-\newtcbox{margenderecho}{nobeforeafter, height=42\cuadri, width=1\cuadri, boxrule=0pt, colback=white,enlarge left by=4\cuadri, enlarge right by= -5\cuadri, enlarge top by= -50\cuadri, enlarge bottom by=4.2\cuadri, left=-3pt, bottom= 0pt, top=-3pt, arc=0pt}
+\newtcbox{margenderecho}{nobeforeafter, height=39\cuadri, width=1\cuadri, boxrule=0pt, colback=white,enlarge left by=4\cuadri, enlarge right by= -5\cuadri, enlarge top by= -48\cuadri, enlarge bottom by=4.2\cuadri, left=-3pt, bottom= 0pt, top=-3pt, arc=0pt}
 
 
-\newtcbox{margenizquierdo}{nobeforeafter, height=42\cuadri, width=1\cuadri, boxrule=0pt, enlarge left by=-5\cuadri, enlarge right by= 4\cuadri,colback=white, enlarge top by= -50\cuadri, enlarge bottom by=4.2\cuadri, right=-3pt, bottom= 0pt, top=-3pt, arc=0pt}
+\newtcbox{margenizquierdo}{nobeforeafter, height=39\cuadri, width=1\cuadri, boxrule=0pt, enlarge left by=-5\cuadri, enlarge right by= 4\cuadri,colback=white, enlarge top by= -48\cuadri, enlarge bottom by=4.2\cuadri, right=-3pt, bottom= 0pt, top=-3pt, arc=0pt}
 
 \newtcolorbox{artepieizquierdo}{skin=enhancedmiddle,watermark graphics=pie.png, watermark opacity=1.00, watermark overzoom=0.95, nobeforeafter, height=1\cuadri, width=63\cuadri, boxrule=0pt, enlarge left by=2\cuadri, enlarge right by= -65\cuadri, enlarge top by= -2.3\cuadri, enlarge bottom by=2.4\cuadri, right=-3pt, bottom= 0pt, top=-3pt, arc=0pt, colback=white, colframe=white}
 
@@ -303,19 +310,21 @@ BoldItalicFont = OpenSans-CondLightItalic.ttf ]{OpenSans-CondLight.ttf}
 %definición de estilo estándar de página
 \fancypagestyle{estandar}{%
 	\fancyhf{}
-	\fancyfoot[RO]{\settowidth{\nombrecapitulo}{\chaptitle}\setlength{\arrayrulewidth}{0.7pt}\setlength{\tabcolsep}{3pt}\arrayrulecolor{white!60!black}
+	\fancyfoot[RO]{\settowidth{\nombrecapitulo}{\chaptitle}\setlength{\arrayrulewidth}{0.7pt}\setlength{\tabcolsep}{3pt}\arrayrulecolor{color2}
 		\margenderecho{
 			\begin{tabular}{x{0.2cm}}
-				$\ $\\[41.2\cuadri]
-				\piecapituloderecho{\rotatebox[origin=c]{270}{\color{white!60!black}\chaptitle$\vphantom{q}$}} \\[-1\cuadri] \hline \\[-0.6\cuadri]
+				$\ $\\[38.2\cuadri]
+				\piecapituloderecho{\rotatebox[origin=c]{270}{\color{color2}\chaptitle$\vphantom{q}$}} \\[-1\cuadri] \hline \\[-0.6\cuadri]
 				\pagina{\textbf{\thepage }}  \\ \begin{artepiederecho}\end{artepiederecho}
 			\end{tabular}}
 		}
-		\fancyfoot[LE]{\settowidth{\nombrecapitulo}{Estadísticas Vitales I-2014}\setlength{\arrayrulewidth}{0.7pt}\setlength{\tabcolsep}{3pt}\arrayrulecolor{white!60!black}
+		\fancyhead[LE]{$\hspace{-4\cuadri}$\encabezado{\includegraphics[width=58\cuadri]{cabezae.png}}}
+		\fancyhead[RO]{\encabezado{\includegraphics[width=58\cuadri]{cabezao.png}}}
+		\fancyfoot[LE]{\settowidth{\nombrecapitulo}{\titulodoc}\setlength{\arrayrulewidth}{0.7pt}\setlength{\tabcolsep}{3pt}\arrayrulecolor{color2}
 			\margenizquierdo{
 				\begin{tabular}{x{0.2cm}}
-					$\ $\\[41.2\cuadri]
-					\piecapituloizquierdo{\rotatebox{90}{\color{white!60!black}Estadísticas Vitales I-2014$\vphantom{q}$}} \\[-1\cuadri] \hline \\[-0.6\cuadri]
+					$\ $\\[38.2\cuadri]
+					\piecapituloizquierdo{\rotatebox{90}{\color{color2}\titulodoc$\vphantom{q}$}} \\[-1\cuadri] \hline \\[-0.6\cuadri]
 					\pagina{\textbf{\thepage }}  \\ \begin{artepieizquierdo}\end{artepieizquierdo}
 				\end{tabular}}
 			}
@@ -455,18 +464,20 @@ BoldItalicFont = OpenSans-CondLightItalic.ttf ]{OpenSans-CondLight.ttf}
 					}
 					
 					
-					\newcommand{\appchapter}[4]{\cleardoublepage\addtocontents{toc}{\protect\addvspace{-0.1\baselineskip}\color{color2!80!black}}\chapter[\texorpdfstring{\color{color2!80!black}#1}{#1}]{#2}\renewcommand{\chaptitle}{#1}\thispagestyle{empty} \stepcounter{secnumber}\stepcounter{Cuadro} $\ $\\[1cm]
-						\begin{titulo-capitulo-app}
-							\begin{numero-capitulo-app}\centering
-								{\fontsize{24mm}{1em}\selectfont\color{white} \Bold \thechapter}
-							\end{numero-capitulo-app}\quad 
-							\raisebox{2.1\cuadri}{\begin{tabular}{l}
-									\fontsize{8.5mm}{1em}\selectfont \Bold \color{color2!95!black} #2\\ 
-									\fontsize{8.5mm}{1em}\selectfont \Bold \color{color2!95!black} #3 \vphantom{Í} 
-								\end{tabular}}
-							\end{titulo-capitulo-app}
-							$\ $\\[1.5cm]
-							
+					\newcommand{\INEchaptersin}[3]{\cleardoublepage\addtocontents{toc}{\protect\addvspace{0.6\baselineskip}\color{color1!80!black}}
+						
+						\chapter[\texorpdfstring{\color{color1!80!black}#1}{#1}]{#2}\renewcommand{\chaptitle}{#1}\thispagestyle{empty}\addtocontents{toc}{\protect\addvspace{0.2\baselineskip}{\color{color1!10!white}\hrule height 0.9pt} \addvspace{0.6\baselineskip} \color{black}} \stepcounter{secnumber} $\ $\\[-1cm]
+						\begin{hoja-capitulo}
+							{$\hspace{2.6in}$\fontsize{24mm}{1em}\selectfont \Bold \thechapter  $\quad$}
+							\begin{titulo-capitulo}
+								\quad 
+								\raisebox{2.1\cuadri}{\begin{tabular}{l}
+										\fontsize{8.5mm}{1em}\selectfont \Bold \color{black} #2\\[1mm] 
+										\fontsize{8.5mm}{1em}\selectfont \Bold \color{black} #3 \vphantom{Í} 
+									\end{tabular}}
+								\end{titulo-capitulo}
+								$\ $\\[1.5cm]
+							\end{hoja-capitulo}
 							\cleardoublepage
 						}
 						
@@ -533,6 +544,31 @@ BoldItalicFont = OpenSans-CondLightItalic.ttf ]{OpenSans-CondLight.ttf}
 						
 						
 						
+						
+						\newcommand{\columnatablaprovisional}[8]{
+							$\hspace{-2.1mm}$\begin{tabular}{b{0.17in}p{2.85in}}
+								\color{white}\section{#1}&\\[-5.1mm] {\color{color1} \textbf{\thesection}} & \textbf{#1.}\\[-1mm]
+							\end{tabular}\\[2.5mm]
+							
+							
+							
+							\vspace{-7.5mm}
+							
+							\begin{center}
+								#6\\[0mm]
+							\end{center}
+							$\ $\\[-8.5mm]
+							{\scriptsize Fuente: #7}\\[-2mm]
+							
+							
+							#8
+						}
+						
+						
+						
+						
+						
+						
 						\newcommand{\hojarotada}[1]{\noindent\begin{fondo-landscape} #1 \end{fondo-landscape}\clearpage}
 						
 						
@@ -546,6 +582,13 @@ BoldItalicFont = OpenSans-CondLightItalic.ttf ]{OpenSans-CondLight.ttf}
 							
 							
 						}
+						
+						
+						\newcommand{\notitatabla}[1]{\color{color2}\scriptsize#1\\[-1.5mm]
+							
+							
+						}
+						
 						
 						
 						
@@ -649,4 +692,6 @@ BoldItalicFont = OpenSans-CondLightItalic.ttf ]{OpenSans-CondLight.ttf}
 						}
 						
 						
+						
+
 

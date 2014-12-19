@@ -45,19 +45,18 @@
 \addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
 \contentsline {section}{\numberline {5.1}Divorcios}{29}{section.5.1}
 \contentsline {section}{\numberline {5.2}Divorcios por departamento de ocurrencia}{29}{section.5.2}
+\addvspace {0.6\baselineskip }
+\contentsline {chapter}{APÉNDICES}{30}{section.5.2}
 \addvspace {0.6\baselineskip }\color {color1!80!black}
-\contentsline {chapter}{\numberline {6}\color {color1!80!black}CUADROS ESTADÍSTICOS}{31}{chapter.6}
+\contentsline {chapter}{\numberline {A}\color {color1!80!black}Cuadros Estadísticos}{31}{appendix.A}
 \addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
-\contentsline {section}{\numberline {6.1}Nacimientos por trimestre de ocurrencia, según departamento de residencia de la madre}{33}{section.6.1}
-\contentsline {section}{\numberline {6.2}Defunciones por trimestre de ocurrencia, según departamento de residencia de la persona fallecida}{33}{section.6.2}
-\contentsline {section}{\numberline {6.3}Defunciones fetales por trimestre de ocurrencia, según departamento de residencia de la madre}{34}{section.6.3}
-\contentsline {section}{\numberline {6.4}Matrimonios por trimestre, según departamento de ocurrencia}{35}{section.6.4}
-\contentsline {section}{\numberline {6.5}Divorcios por trimestre, según departamento de ocurrencia}{37}{section.6.5}
-\addvspace {0.6\baselineskip }\color {color1!80!black}
-\contentsline {chapter}{\numberline {7}\color {color1!80!black}TABLAS DE VARIACIONES}{39}{chapter.7}
-\addvspace {0.2\baselineskip }{\color {color1!10!white}\hrule height 0.9pt} \vskip 0.6\baselineskip \relax \color {black}
-\contentsline {section}{\numberline {7.1}Nacimientos}{41}{section.7.1}
-\contentsline {section}{\numberline {7.2}Defunciones}{41}{section.7.2}
-\contentsline {section}{\numberline {7.3}Defunciones fetales}{42}{section.7.3}
-\contentsline {section}{\numberline {7.4}Matrimonios}{42}{section.7.4}
-\contentsline {section}{\numberline {7.5}Divorcios}{43}{section.7.5}
+\contentsline {section}{\numberline {A.1}Nacimientos por trimestre de ocurrencia, según departamento de residencia de la madre}{33}{section.A.1}
+\contentsline {section}{\numberline {A.2}Análisis de variación de nacimientos}{33}{section.A.2}
+\contentsline {section}{\numberline {A.3}Defunciones por trimestre de ocurrencia, según departamento de residencia de la persona fallecida}{34}{section.A.3}
+\contentsline {section}{\numberline {A.4}Análisis de variación de defunciones}{34}{section.A.4}
+\contentsline {section}{\numberline {A.5}Defunciones fetales por trimestre de ocurrencia, según departamento de residencia de la madre}{35}{section.A.5}
+\contentsline {section}{\numberline {A.6}Análisis de variación de defunciones fetales}{35}{section.A.6}
+\contentsline {section}{\numberline {A.7}Matrimonios por trimestre, según departamento de ocurrencia}{36}{section.A.7}
+\contentsline {section}{\numberline {A.8}Análisis de variación de matrimonios}{36}{section.A.8}
+\contentsline {section}{\numberline {A.9}Divorcios por trimestre, según departamento de ocurrencia}{37}{section.A.9}
+\contentsline {section}{\numberline {A.10}Análisis de variación de divorcios}{37}{section.A.10}

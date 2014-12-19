@@ -69,22 +69,19 @@ temaPie <- temaINE
 #*******************************CONFIGURACION PARA TIKZDEVICE*********************#
 options(tikzDefaultEngine = "xetex")
 #options(tikzXelatex = "/usr/local/texlive/2014/bin/x86_64-linux/xelatex")
-options(tikzXelatexPackages = c("\\usepackage{tikz}\n",
+options(tikzXelatexPackages = c("\\usepackage[T1]{fontenc}",
+                                "\\usepackage{tikz}\n",
                                 "\\usepackage[active,tightpage,xetex]{preview}\n",
                                 "\\usepackage{fontspec,xunicode}\n",
                                 "\\PreviewEnvironment{pgfpicture}\n",
                                 "\\setlength\\PreviewBorder{0pt}\n",
-                                "\\setmainfont{Open Sans Condensed Light}\n",
-                                "\\newfontfamily\\Bold{Open Sans Condensed Bold}",
-                                "\\newfontfamily\\Sans{Open Sans}",
-                                "\\newfontfamily\\Italic{Open Sans Condensed Light Italic}"))
+                                "\\usepackage{fontspec,xunicode}\n",
+                                "\\setmainfont{Open Sans Condensed Light}\n"))
 
-options(tikzUnicodeMetricPackages = c("\\usepackage[T1]{fontenc}\n","\\usetikzlibrary{calc}\n",
-                                      "\\usepackage{fontspec,xunicode}\n", 
-                                      "\\setmainfont{Open Sans Condensed Light}\n"))
+options(tikzUnicodeMetricPackages = c("\\usetikzlibrary{calc}\n"))
 
 options(tikzDocumentDeclaration= "\\documentclass[10pt,twoside]{book}")
-
+#options(tikzMetricsDictionary = "Diccionario")
 
 #***********************ALGUNAS VARIABLES UTILES*******************#
 repu <- c("Total República, Total republica, Total república, Total Republica")
@@ -95,5 +92,5 @@ color2 <- rgb(0.603921568627451,0.6274509803921569,0.4862745098039216)
 izquierdo <- -5
 abajo <- -8
 usep <- 2.8
-izBar <- -17
+izBar <- 0
 

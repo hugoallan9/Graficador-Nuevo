@@ -29,7 +29,7 @@ graficaBar <- function(data, color1=color, ancho = 0.6, ordenar = TRUE)
   grafica <- ggplot(data, aes(x, y))
   grafica <- grafica + 
     geom_bar(stat = 'identity',fill = calcularRampa(data, NA), colour = calcularRampa(data, color1), width = ancho, position =  "dodge")+
-    labs(x="",y="")+
+    labs(x=NULL,y="")+
     scale_y_continuous(breaks=NULL, expand= c(0.0,0.0))+
     coord_flip()
   print(grafica)
@@ -249,23 +249,25 @@ rotarEtiX2 <- function(graph)
     theme(plot.margin = unit(c(longitud,0,abajo,izquierdo), "mm"))
 }
 
-etiquetasBarras <- function(graph)
+etiquetasBarras <- function(graph, margenIz = izBar  )
 {
   max <-ggplot_build(graph)$panel$ranges[[1]]$x.range[2] 
   max <- nchar(as.character(round(max,2)))
   longitud <- 1.2*max +3.6
   print(max)
+  mIz <- izBar + margenIz
   if(sonEnteros(ggplot_build(graph)$data[[1]]) == 0)
   {
+    print("jojo SI son todos enteros")
     graph <- graph +
       geom_text(aes(family = "Open Sans Condensed Light",label= formatC(y,format = "f",big.mark = ",", digits = 1, drop0trailing = T)), size=3, hjust=-0.5, vjust = 0.5)+
-      theme(plot.margin = unit(c(0,longitud,-8,izBar), "mm")) 
+      theme(plot.margin = unit(c(0,longitud,-8,mIz), "mm")) 
   }
   else
   {
     graph <- graph +
       geom_text(aes(family = "Open Sans Condensed Light",label= formatC(y,format = "f",big.mark = ",", digits = 1)), size=3, hjust=-0.5, vjust = 0.5)+
-      theme(plot.margin = unit(c(0,longitud,-8,izBar), "mm")) 
+      theme(plot.margin = unit(c(0,longitud,-8,mIz), "mm")) 
   }
   
 }
@@ -314,7 +316,7 @@ exportarLatex <- function(nombre = grafica, graph)
   #print(gy)
   #graph = graph + scale_y_continuous(expand=c(0,0),limits=c(0,gy))
   #print(graph)
-  tikz(nombre, standAlone = FALSE, bareBones = TRUE, bg = "transparent",width = 3.19, height= 1.91, sanitize = TRUE)
+  tikz(nombre, standAlone = FALSE, bareBones = TRUE, bg = "transparent",width = 3.19, height= 1.91, sanitize = F)
   temp<- ggplot_gtable(ggplot_build(graph))
   temp$layout$clip[temp$layout$name=="panel"] <- "off"
   grid.draw(temp)
@@ -331,7 +333,7 @@ compilar <- function(ruta = paste(getwd(), "Latex/ENEI.tex",sep="/")){
 preview <- function(graph)
 {
   nombre = tempfile(pattern="Preview", tmpdir= paste(normalizePath(getwd()),"Temporal", sep="\\"))
-  tikz(paste(nombre,".tex", sep= ""), standAlone = TRUE, bg = "transparent",bareBones = FALSE, width = 3.19, height= 1.91, sanitize= TRUE)
+  tikz(paste(nombre,".tex", sep= ""), standAlone = TRUE, bg = "transparent",bareBones = FALSE, width = 3.19, height= 1.91, sanitize= F)
   temp<- ggplot_gtable(ggplot_build(graph))
   temp$layout$clip[temp$layout$name=="panel"] <- "off"
   grid.draw(temp)
