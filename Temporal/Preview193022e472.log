@@ -1,12 +1,11 @@
-This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014/W32TeX) (preloaded format=xelatex 2014.9.6)  18 DEC 2014 22:51
+This is XeTeX, Version 3.14159265-2.6-0.99991 (TeX Live 2014/W32TeX) (preloaded format=xelatex 2014.9.6)  22 DEC 2014 21:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/lisa/Documents/GitHub/Graficador-Nuevo/Temporal/Preview17543cf13201.
-tex
+**C:/Users/lisa/Documents/GitHub/Graficador-Nuevo/Temporal/Preview193022e472.te
+x
 
-(c:/Users/lisa/Documents/GitHub/Graficador-Nuevo/Temporal/Preview17543cf13201.t
-ex
+(c:/Users/lisa/Documents/GitHub/Graficador-Nuevo/Temporal/Preview193022e472.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (c:/texlive/2014/texmf-dist/tex/latex/base/book.cls
@@ -669,8 +668,8 @@ LaTeX Info: Redefining \upshape on input line 2102.
 . <->"Open Sans Condensed Light/BI/ICU:script=latn;language=DFLT;"
 .................................................
 
-No file Preview17543cf13201.aux.
-\openout1 = `Preview17543cf13201.aux'.
+No file Preview193022e472.aux.
+\openout1 = `Preview193022e472.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
@@ -769,16 +768,16 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 17.
 Preview: Tightpage 0 0 0 0
 [1]
-(C:/Users/lisa/Documents/GitHub/Graficador-Nuevo/Temporal/Preview17543cf13201.a
-ux) ) 
+(C:/Users/lisa/Documents/GitHub/Graficador-Nuevo/Temporal/Preview193022e472.aux
+) ) 
 Here is how much of TeX's memory you used:
- 22788 strings out of 493734
- 480410 string characters out of 6149469
- 503934 words of memory out of 5000000
- 25869 multiletter control sequences out of 15000+600000
+ 22821 strings out of 493734
+ 481039 string characters out of 6149469
+ 506040 words of memory out of 5000000
+ 25902 multiletter control sequences out of 15000+600000
  4491 words of font info for 26 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 55i,5n,54p,10427b,632s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,5n,54p,10425b,632s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on C:/Users/lisa/Documents/GitHub/Graficador-Nuevo/Temporal/Prev
-iew17543cf13201.pdf (1 page).
+iew193022e472.pdf (1 page).

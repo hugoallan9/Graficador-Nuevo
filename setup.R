@@ -90,7 +90,9 @@ pts2mm <- 0.352777778
 color <- rgb(0,0,0, maxColorValue = 255)
 color2 <- rgb(0.603921568627451,0.6274509803921569,0.4862745098039216)
 izquierdo <- -5
-abajo <- -8
+abajo <- 0
 usep <- 2.8
 izBar <- 0
+wspace <- 1
+fEscala <- 0.85039370025172
 

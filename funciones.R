@@ -11,10 +11,11 @@ graficaCol <- function(data, color1=color, ancho = 0.6, ordenar = TRUE)
  names(data)<- c("x","y")
  data <- data[ordenarNiveles(data, ordenar),]
  data$x <- factor(data$x, levels = data$x)
+ levels(data$x) <- gsub("\\\\n", "\n", levels(data$x))
  grafica <- ggplot(data, aes(x, y))
  grafica <- grafica + 
    geom_bar(stat = 'identity', colour = calcularRampa(data, color1), fill = calcularRampa(data,NA), width = ancho, position =  "dodge")+
-   labs(x="",y="")+
+   labs(x=NULL,y=NULL)+
    scale_y_continuous(breaks=NULL, expand= c(0.0,0.0))
  print(grafica)
  return(grafica)
@@ -26,10 +27,11 @@ graficaBar <- function(data, color1=color, ancho = 0.6, ordenar = TRUE)
   names(data)<- c("x","y")
   data <- data[rev(ordenarNiveles(data, ordenar)),]
   data$x <- factor(data$x, levels = data$x)
+  levels(data$x) <- gsub("\\n", "\n", levels(data$x))
   grafica <- ggplot(data, aes(x, y))
   grafica <- grafica + 
     geom_bar(stat = 'identity',fill = calcularRampa(data, NA), colour = calcularRampa(data, color1), width = ancho, position =  "dodge")+
-    labs(x=NULL,y="")+
+    labs(x=NULL,y=NULL)+
     scale_y_continuous(breaks=NULL, expand= c(0.0,0.0))+
     coord_flip()
   print(grafica)
@@ -78,12 +80,12 @@ graficaLineaTrim <- function(data, color1 = color, inicio = 0, ancho = 0.5)
   if(ggplot_build(grafica)$data[[1]]$y[1] > 3)
   {
     grafica <- grafica + scale_y_continuous(limits = c(limite,NA))+
-      theme(plot.margin = unit(c(2.5,3,0,-9), "mm"))
+      theme(plot.margin = unit(c(2.5,3,0,-7), "mm")) #-9
   }
   else
   {
     grafica <- grafica + scale_y_continuous(limits = c(limite,NA))+
-      theme(plot.margin = unit(c(2.5,3,0,-4), "mm"))
+      theme(plot.margin = unit(c(2.5,3,0,-3), "mm")) #-4
   }
   return(grafica)
 }
@@ -232,28 +234,26 @@ completarEtiquetas <- function(dato,posicion, tam = 5)
 rotarEtiX <- function(graph)
 {
   
-  longitud <- 2.5 +2.5
+  longitud <- usep + 2
   graph <- graph + theme(axis.text.x = element_text(angle = 90, vjust =0.5 , hjust= 1))+
-    theme(plot.margin = unit(c(longitud,0,abajo,izquierdo), "mm"))
+    theme(plot.margin = unit(c(longitud,0,0,0), "mm"))
 
 }
 
 rotarEtiX2 <- function(graph)
 {
   max <-ggplot_build(graph)$panel$ranges[[1]]$y.range[2]
-  print(max)
-  max <- nchar(as.character(round(max,2)))
-  longitud <- 1.2*max + usep
-  print(max)
+  longitud <- getLatexStrWidth(formatC(max,format = "f",big.mark = ",", digits = 1), cex = fEscala) 
+  longitud <- longitud*0.352777778 + wspace
     graph <- graph + theme(axis.text.x = element_text(angle = 90, vjust =0.5 , hjust= 1))+
-    theme(plot.margin = unit(c(longitud,0,abajo,izquierdo), "mm"))
+    theme(plot.margin = unit(c(longitud,0,0,0), "mm"))
 }
 
 etiquetasBarras <- function(graph, margenIz = izBar  )
 {
   max <-ggplot_build(graph)$panel$ranges[[1]]$x.range[2] 
-  max <- nchar(as.character(round(max,2)))
-  longitud <- 1.2*max +3.6
+  longitud <- getLatexStrWidth(formatC(max,format = "f",big.mark = ",", digits = 1), cex = fEscala) 
+  longitud <- longitud*0.352777778 + wspace
   print(max)
   mIz <- izBar + margenIz
   if(sonEnteros(ggplot_build(graph)$data[[1]]) == 0)
@@ -261,53 +261,53 @@ etiquetasBarras <- function(graph, margenIz = izBar  )
     print("jojo SI son todos enteros")
     graph <- graph +
       geom_text(aes(family = "Open Sans Condensed Light",label= formatC(y,format = "f",big.mark = ",", digits = 1, drop0trailing = T)), size=3, hjust=-0.5, vjust = 0.5)+
-      theme(plot.margin = unit(c(0,longitud,-8,mIz), "mm")) 
+      theme(plot.margin = unit(c(0,longitud,0,0), "mm")) 
   }
   else
   {
     graph <- graph +
       geom_text(aes(family = "Open Sans Condensed Light",label= formatC(y,format = "f",big.mark = ",", digits = 1)), size=3, hjust=-0.5, vjust = 0.5)+
-      theme(plot.margin = unit(c(0,longitud,-8,mIz), "mm")) 
+      theme(plot.margin = unit(c(0,longitud,0,0), "mm")) 
   }
   
 }
 
 etiquetasHorizontales <- function(graph)
 {
-  longitud <- 2.5 +2.5
+  longitud <- 4
     if(sonEnteros(ggplot_build(graph)$data[[1]]) == 0)
     {
       graph <- graph +
       geom_text(aes(family = "Open Sans Condensed Light",label= formatC(y,format = "f",digits = 1,big.mark = ",", drop0trailing = T)),size=3, hjust=0.5, vjust = -0.5)+
-        theme(plot.margin = unit(c(longitud,0,0,izquierdo), "mm"))
+        theme(plot.margin = unit(c(longitud,0,0,0), "mm"))
     }
   else
   {
     graph <- graph +
     geom_text(aes(family = "Open Sans Condensed Light",label= formatC(y,format = "f",digits = 1,big.mark = ",")),size=3, hjust=0.5, vjust = -0.5)+
-      theme(plot.margin = unit(c(longitud,0,0,izquierdo), "mm"))
+      theme(plot.margin = unit(c(longitud,0,0,0), "mm"))
   }
 }
 
 etiquetasVerticales <- function(graph)
 {
   max <-ggplot_build(graph)$panel$ranges[[1]]$y.range[2] 
-  max <- nchar(formatC(as.character(max), big.mark = ",", format = "f", digits =1))
-  longitud <- 1.2*max +2.5
+  #max <- nchar(formatC(as.character(max), big.mark = ",", format = "f", digits =1))
+  longitud <- getLatexStrWidth(formatC(max,format = "f",big.mark = ",", digits = 1), cex = fEscala) 
+  longitud <- longitud*0.352777778 + wspace
   print(max)
   if(sonEnteros(ggplot_build(graph)$data[[1]]) == 0)
   {
     graph <- graph +
       geom_text(aes(family = "Open Sans Condensed Light",label= formatC(y, big.mark = ",", format = "f", digits =1, drop0trailing = T)), angle = 90, size=3, hjust=-0.1, vjust = 0.5)+
-      theme(plot.margin = unit(c(longitud,0,0,izquierdo), "mm"))  
+      theme(plot.margin = unit(c(longitud,0,0,0), "mm"))  
   }
   else
   {
     graph <- graph +
       geom_text(aes(family = "Open Sans Condensed Light",label= formatC(y, big.mark = ",", format = "f", digits =1)), angle = 90, size=3, hjust=-0.1, vjust = 0.5)+
-      theme(plot.margin = unit(c(longitud,0,0,izquierdo), "mm"))
+      theme(plot.margin = unit(c(longitud,0,0,0), "mm"))
   }
-  
 }
 
 exportarLatex <- function(nombre = grafica, graph)
