@@ -251,9 +251,10 @@ rotarEtiX2 <- function(graph)
 
 etiquetasBarras <- function(graph, margenIz = izBar  )
 {
-  max <-ggplot_build(graph)$panel$ranges[[1]]$x.range[2] 
+  max <-ggplot_build(graph)$panel$ranges[[1]]$x.range[2]
+  print(max)
   longitud <- getLatexStrWidth(formatC(max,format = "f",big.mark = ",", digits = 1), cex = fEscala) 
-  longitud <- longitud*0.352777778 + wspace
+  longitud <- longitud*0.352777778 + wBarSpace
   print(max)
   mIz <- izBar + margenIz
   if(sonEnteros(ggplot_build(graph)$data[[1]]) == 0)

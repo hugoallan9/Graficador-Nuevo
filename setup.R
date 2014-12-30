@@ -95,4 +95,5 @@ usep <- 2.8
 izBar <- 0
 wspace <- 1
 fEscala <- 0.85039370025172
+wBarSpace <- 2.3
 

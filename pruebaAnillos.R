@@ -3,19 +3,15 @@ p1 <- pie(tablas$"pie1"$y,labels = tablas$"pie1"$y)
 
 
 
-
-
-
-
-
 tablas$"pie1"$ymax = cumsum(tablas$"pie1"$y)
 tablas$"pie1"$ymin = c(0, head(tablas$"pie1"$ymax, n=-1))
 y.breaks <- cumsum(tablas$"pie1"$y)-tablas$"pie1"$y/2 
+tikz("anillo.tex", standAlone = TRUE, bg = "transparent",bareBones = FALSE, width = 3.19, height= 1.91, sanitize= F)
 p1 <- ggplot(tablas$"pie1", aes(fill =  x, ymax = ymax, ymin = ymin ,xmax= 10, xmin= 5))+
   geom_rect()+
   geom_rect(colour= "white", show_guide=FALSE)+
   scale_y_continuous(breaks = y.breaks , labels=tablas$"pie1"$y)+
-  coord_polar(theta ="y")+
+  #coord_polar(theta ="y")+
   xlim(c(0,10 ))+
   guides(fill = guide_legend(title = ""))+
   labs(x = NULL, y=NULL)+
@@ -26,9 +22,13 @@ p1 <- ggplot(tablas$"pie1", aes(fill =  x, ymax = ymax, ymin = ymin ,xmax= 10, x
         legend.background = element_rect(colour = 'purple', fill = 'pink', size = 3, linetype='dashed'),
        axis.text.x= element_text(family = "Open Sans Condensed Light", colour = "black", face = "plain", size = 8, hjust = 1.5, vjust =1.5, angle = 0, lineheight = 0.9))
 theme_set(temaBarras)
-pdf(file = "pruebaPie.pdf", family = "Open Sans Condensed Light", width = 3.19, height= 1.91)
+#pdf(file = "pruebaPie.pdf", family = "Open Sans Condensed Light", width = 3.19, height= 1.91)
 print(p1)
+tikzCoord(100,20,'cuadrado')
+tikzAnnotate("\\draw (0,0) -- (1,1);")
 dev.off()
+
+
 # Input the ad data
 ad = data.frame(
   type = c("Poster", "Billboard", "Bus", "Digital"),
