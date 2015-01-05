@@ -437,3 +437,23 @@ sonEnteros <- function(data)
     contador = contador +1
   return(contador)
 }
+
+inc2mm <-function(number)
+{
+  return(number*25.4)
+}
+
+inc2pt <- function(number)
+{
+  return(number*72)
+}
+
+mm2inch <- function(number)
+{
+  return(number*0.0393700787)
+}
+
+mm2pt <- function(number)
+{
+  return(mm2inch(inc2pt(number)))
+}

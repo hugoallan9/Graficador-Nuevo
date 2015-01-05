@@ -75,6 +75,8 @@ options(tikzXelatexPackages = c("\\usepackage[T1]{fontenc}",
                                 "\\usepackage{fontspec,xunicode}\n",
                                 "\\PreviewEnvironment{pgfpicture}\n",
                                 "\\setlength\\PreviewBorder{0pt}\n",
+                                "\\usetikzlibrary{calc}\n",
+                                "\\usetikzlibrary{positioning}\n",
                                 "\\usepackage{fontspec,xunicode}\n",
                                 "\\setmainfont{Open Sans Condensed Light}\n"))
 

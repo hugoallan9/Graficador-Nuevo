@@ -1,32 +1,49 @@
 ##############MIS INTENTOS DE PIES###############################
 p1 <- pie(tablas$"pie1"$y,labels = tablas$"pie1"$y)
 
-
-
+tikz("Pruebas Tcolorbox/donout.tex" , standAlone = TRUE, bg = "transparent",bareBones = FALSE, width = 3.19, height= 1.91, sanitize= F)
+temaN <-theme_gray(base_size = fontSize, base_family = "Open Sans Condensed Light")
+theme_set(temaBarras)
 tablas$"pie1"$ymax = cumsum(tablas$"pie1"$y)
 tablas$"pie1"$ymin = c(0, head(tablas$"pie1"$ymax, n=-1))
 y.breaks <- cumsum(tablas$"pie1"$y)-tablas$"pie1"$y/2 
-tikz("anillo.tex", standAlone = TRUE, bg = "transparent",bareBones = FALSE, width = 3.19, height= 1.91, sanitize= F)
 p1 <- ggplot(tablas$"pie1", aes(fill =  x, ymax = ymax, ymin = ymin ,xmax= 10, xmin= 5))+
-  geom_rect()+
-  geom_rect(colour= "white", show_guide=FALSE)+
-  scale_y_continuous(breaks = y.breaks , labels=tablas$"pie1"$y)+
-  #coord_polar(theta ="y")+
-  xlim(c(0,10 ))+
-  guides(fill = guide_legend(title = ""))+
+  #geom_rect(show_guide=F)+
+  geom_rect(colour= "white", show_guide=F)+
+  labs(x=NULL, y=NULL)+
+  scale_y_continuous(breaks = y.breaks, labels=tablas$"pie1"$y)+
   labs(x = NULL, y=NULL)+
-  theme(legend.key.size = unit(5, "mm"),
-        #legend.position = c(1.2,0.5),
-        #plot.margin = unit(c(2.5,3,0,-50), "mm"),
-        legend.key = element_rect(colour = 'purple', fill = 'white', size = 0.1, linetype='dashed'),
-        legend.background = element_rect(colour = 'purple', fill = 'pink', size = 3, linetype='dashed'),
-       axis.text.x= element_text(family = "Open Sans Condensed Light", colour = "black", face = "plain", size = 8, hjust = 1.5, vjust =1.5, angle = 0, lineheight = 0.9))
-theme_set(temaBarras)
-#pdf(file = "pruebaPie.pdf", family = "Open Sans Condensed Light", width = 3.19, height= 1.91)
-print(p1)
-tikzCoord(100,20,'cuadrado')
-tikzAnnotate("\\draw (0,0) -- (1,1);")
+  coord_polar(theta ="y")+
+  xlim(c(0,10 ))+
+  guides(fill = guide_legend(title = NULL))+
+  theme(plot.margin = unit(c(0,inc2mm(3.19/4),0,-20),"mm"), axis.line.y = element_line(colour=NA),
+        axis.ticks.y = element_line(colour=NA),
+        panel.margin = unit(c(0,inc2mm(3.19/4),0,-20),"mm"),
+        axis.text.y = element_text(colour = NA, vjust = -3, hjust = -3),
+        axis.text.x = element_text(family = "Open Sans Condensed Light", colour = "black", face = "plain", size = 9, hjust = -10, vjust =-10, angle = 0, lineheight = 0.9)
+        )
+temp<- ggplot_gtable(ggplot_build(p1))
+temp$layout$clip[temp$layout$name=="panel"] <- "off"
+grid.draw(temp)
+tikzCoord(2*3.19/3, 1.91/2, name= "rect", units = "inches") ## ESTA ES LA QUE FUNCIONA 
+tikzCoord(0,mm2inch(2.5+ 4), name = "desY", units= "inches")
+tikzCoord(mm2inch(2.5),mm2inch(0+ 4), name = "desX", units = "inches")
+tikzCoord(mm2inch(2.5),-mm2inch(0+ 4), name = "mdesX", units = "inches")
+tikzAnnotate("\\coordinate (t1) at ($(rect) + 0.5*(desX) + 0.5*(desY)$);")
+tikzAnnotate("\\coordinate (t2) at ($(rect)+0.5*(mdesX)-0.5*(desY)$);")
+tikzAnnotate(c("\\path [fill=red] ($(rect)+(desY)$) rectangle ($(rect)+(desX)$);"))
+tikzAnnotate(c("\\node [text width=",
+                mm2pt(20), 
+               ",right= 0.3cm of t1,scale = 0.9]{Esta es una etiqueta larga};"))
+tikzAnnotate(c("\\path [fill=blue] ($(rect)-(desY)$) rectangle ($(rect)+(mdesX)$);"))
+tikzAnnotate(c("\\node [text width=",
+               mm2pt(20), 
+               ",right= 0.3cm of t2,scale = 0.9]{Etiqueta 1};"))
+
 dev.off()
+#pdf(file = "pruebaPie.pdf", family = "Open Sans Condensed Light", width = 3.19, height= 1.91)
+#print(p1)
+#dev.off()
 
 
 # Input the ad data
