@@ -23,7 +23,7 @@ cargarPaquete("grid")
 cargarPaquete("extrafont")
 cargarPaquete("gridExtra")
 cargarPaquete("tools")
-
+cargarPaquete("scales")
 #**************************CREACION DE TEMAS***********************************#
 
 
